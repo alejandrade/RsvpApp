@@ -1,0 +1,15 @@
+version: '3.7'
+services:
+  rsvp:
+    image: sephto/gigamogrsvp:latest
+    ports:
+    - 8080:8080
+  mongodb_container:
+    image: mongo:latest
+    ports:
+      - 27017:27017
+    volumes:
+      - mongodb_data_container:/data/db
+
+volumes:
+  mongodb_data_container:
